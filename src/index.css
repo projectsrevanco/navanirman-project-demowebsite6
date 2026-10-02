@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-navanirman-ivory: #F8F7F4;
+  --color-navanirman-concrete: #EAE8E3;
+  --color-navanirman-charcoal: #2A2A2A;
+  --color-navanirman-slate: #5E5D5C;
+  --color-navanirman-terracotta: #B85A44;
+  --color-navanirman-black: #161616;
+  --color-navanirman-warmgrey: #D6D3CD;
+
+  --font-display: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+@layer base {
+  html, body {
+    @apply bg-navanirman-ivory text-navanirman-charcoal font-sans antialiased;
+    font-variant-numeric: lining-nums tabular-nums;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display text-navanirman-charcoal tracking-tight;
+    font-variant-numeric: lining-nums;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      animation-delay: -1ms !important;
+      animation-duration: 1ms !important;
+      animation-iteration-count: 1 !important;
+      background-attachment: initial !important;
+      scroll-behavior: auto !important;
+      transition-duration: 0s !important;
+      transition-delay: 0s !important;
+    }
+  }
+}
+
+@layer components {
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 text-sm font-medium transition-colors duration-300 ease-in-out uppercase tracking-wider;
+  }
+  .btn-primary {
+    @apply bg-navanirman-terracotta text-white hover:bg-[#A34B36];
+  }
+  .btn-secondary {
+    @apply bg-navanirman-charcoal text-white hover:bg-navanirman-black;
+  }
+  .btn-outline {
+    @apply border border-navanirman-charcoal text-navanirman-charcoal hover:bg-navanirman-charcoal hover:text-white;
+  }
+  .btn-ghost {
+    @apply text-navanirman-charcoal hover:text-navanirman-terracotta;
+  }
+}
